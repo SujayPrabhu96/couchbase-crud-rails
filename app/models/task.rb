@@ -1,4 +1,6 @@
 class Task
+  require 'securerandom'
+
   def initialize
     @collection = COUCHBASE_BUCKET.collection("tasks")
   end
@@ -8,7 +10,7 @@ class Task
   end
 
   def create(content)
-    @collection.upsert("id", content)
+    @collection.upsert("task_#{SecureRandom.uuid}", content)
   end
 
   def update(id, data)
