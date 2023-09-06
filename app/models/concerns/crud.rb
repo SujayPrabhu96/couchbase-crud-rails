@@ -2,7 +2,7 @@ module Crud
   extend ActiveSupport::Concern
 
   def all
-    res = COUCHBASE_CLUSTER.query("SELECT * FROM `todo`.`todo-scope`.`tasks`")
+    res = COUCHBASE_CLUSTER.query("SELECT META().id, * FROM `todo`.`todo-scope`.`tasks`")
     res.rows.to_a
   end
 

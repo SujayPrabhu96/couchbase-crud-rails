@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   def index
     tasks = Task.new.all
     tasks = tasks.map { |task| OpenStruct.new(task) }
-    puts tasks.inspect
     render json: tasks
   end
 

@@ -1,5 +1,6 @@
 json.data do
-  json.array! @tasks do |task|
-    json.partial! 'tasks/task', task: task
+  json.array! tasks do |task|
+    json.id task.id
+    json.task { json.patial! 'task', task: task }
   end
 end
