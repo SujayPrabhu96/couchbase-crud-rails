@@ -1,6 +1,11 @@
 module Crud
   extend ActiveSupport::Concern
 
+  def all
+    res = COUCHBASE_CLUSTER.query("SELECT * FROM `todo`.`todo-scope`.`tasks`")
+    res.rows.to_a
+  end
+
   def find(id)
     @collection.get(id)
   end
