@@ -6,12 +6,12 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new.create(task_params.to_h)
-    render json: @task
+    render json: @task.content
   end
 
   def update
     @task = Task.new.update(params[:id], task_params.to_h)
-    render json: @task
+    render json: @task.content
   end
 
   def destroy
