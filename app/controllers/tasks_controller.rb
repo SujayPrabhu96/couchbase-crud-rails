@@ -5,12 +5,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new.create(task_params)
+    @task = Task.new.create(task_params.to_h)
     render json: @task
   end
 
   def update
-    @task = Task.new.update(params[:id], task_params)
+    @task = Task.new.update(params[:id], task_params.to_h)
     render json: @task
   end
 
