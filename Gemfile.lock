@@ -70,6 +70,7 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.2.2)
+    couchbase (3.4.4)
     crass (1.0.6)
     date (3.3.3)
     debug (1.8.0)
@@ -166,6 +167,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  couchbase
   debug
   puma (~> 5.0)
   rails (~> 7.0.7, >= 7.0.7.2)
