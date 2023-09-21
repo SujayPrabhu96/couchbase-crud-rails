@@ -66,3 +66,4 @@ group :test do
 end
 
 gem "couchbase"
+gem "rom"
